@@ -1,4 +1,6 @@
 node_modules
 bower_components
 
+# For Sublime (with jshint)
 *.sublime*
+.jshintrc
