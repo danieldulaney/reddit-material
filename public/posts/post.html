@@ -1,7 +1,17 @@
 <md-card>
+	<!--
+	<img ng-src="{{post.data.preview.images[0].source.url}}" class="md-card-image">
+	-->
 	<md-card-content>
-		<h2>{{post.data.title}}</h2>
+		<h2 class="card-header">{{post.data.title}}</h2>
 		<p>URL: <code>{{post.data.preview.images[0].source.url}}</code></p>
 		<pre>{{post|json}}</pre>
 	</md-card-content>
+
+	<div class="md-actions" layout="row" layout-align="end center">
+		<md-button>
+			<md-icon md-svg-icon="navigation:ic_arrow_back_24px" aria-label="Upvote"></md-icon>
+		</md-button>
+		<md-button>Downvote</md-button>
+	</div>
 </md-card>
