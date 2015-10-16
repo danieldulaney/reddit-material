@@ -20,7 +20,7 @@ posts.controller('PostsDataCtrl', ['$resource', function($resource){
 posts.directive('rmPost', function(){
 	return {
 		restrict: 'E',
-		templateUrl: '/templates/post.html',
+		templateUrl: 'post.html',
 		scope: {
 			post: '=post',
 		},
