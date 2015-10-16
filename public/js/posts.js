@@ -13,7 +13,11 @@ posts.controller('PostsDataCtrl', ['$resource', function($resource){
 	);
 
 	ctrl.PostResource.get({subreddit: 'funny'}, function(posts){
-		ctrl.posts = posts;
+		ctrl.posts = posts.data.children;
 	});
-}]);
-})();
+}]); // PostsDataCtrl
+
+
+
+
+})(); // Encapsulation

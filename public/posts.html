@@ -35,7 +35,12 @@
 			</md-sidenav>
 			<div layout="column" flex id="content" ng-app=>
 				<md-content layout="column" flex class="md-padding" ng-controller="PostsDataCtrl as pdCtrl">
-					<pre>{{pdCtrl.posts.data.children|json}}</pre>
+					<md-card ng-repeat="post in pdCtrl.posts">
+						<md-card-content>
+							<h2>{{post.data.title}}</h2>
+							<pre>{{post.data|json}}</pre>
+						</md-card-content>
+					</md-card>
 				</md-content>
 			</div>
 		</div>
