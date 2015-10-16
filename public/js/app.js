@@ -1,6 +1,7 @@
+(function(){
 'use strict';
 
-var app = angular.module('StarterApp', ['ngMaterial']);
+var app = angular.module('App', ['ngMaterial']);
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
   $scope.toggleSidenav = function(menuId) {
@@ -8,3 +9,4 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
   };
  
 }]);
+})();
