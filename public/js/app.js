@@ -9,9 +9,16 @@ app.config(function($mdIconProvider){
 });
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
-  $scope.toggleSidenav = function(menuId) {
-    $mdSidenav(menuId).toggle();
-  };
- 
+	$scope.toggleSidenav = function(menuId) {
+		$mdSidenav(menuId).toggle();
+	};
 }]);
+
+app.filter('timesince', function(){
+	return function(input){
+		return moment().to(input*1000);
+	};
+});
+
+
 })();

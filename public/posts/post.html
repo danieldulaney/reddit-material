@@ -3,15 +3,18 @@
 	<img ng-src="{{post.data.preview.images[0].source.url}}" class="md-card-image">
 	-->
 	<md-card-content>
-		<h2 class="card-header">{{post.data.title}}</h2>
+		<h1 class="card-header">{{post.data.title}}</h1>
+		<p class="byline">Created {{post.data.created_utc|timesince}} by /u/{{post.data.author}} in /r/{{post.data.subreddit}}</p>
 		<p>URL: <code>{{post.data.preview.images[0].source.url}}</code></p>
 		<pre>{{post|json}}</pre>
 	</md-card-content>
 
 	<div class="md-actions" layout="row" layout-align="end center">
-		<md-button>
-			<md-icon md-svg-icon="navigation:ic_arrow_back_24px" aria-label="Upvote"></md-icon>
+		<md-button class="md-icon-button">
+			<md-icon md-svg-icon="navigation:ic_expand_less_24px" aria-label="Upvote"></md-icon>
 		</md-button>
-		<md-button>Downvote</md-button>
+		<md-button class="md-icon-button">
+			<md-icon md-svg-icon="navigation:ic_expand_more_24px" aria-label="Downvote"></md-icon>
+		</md-button>
 	</div>
 </md-card>
