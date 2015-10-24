@@ -1,11 +1,7 @@
 <md-card>
-	<!--
-	<img ng-src="{{post.data.preview.images[0].source.url}}" class="md-card-image">
-	-->
 	<md-card-content>
 		<h1 class="card-header">{{post.data.title}}</h1>
 		<p class="byline">Created {{post.data.created_utc|timesince}} by /u/{{post.data.author}} in /r/{{post.data.subreddit}}</p>
-		<p>URL: <code>{{post.data.preview.images[0].source.url}}</code></p>
 		<pre>{{post|json}}</pre>
 	</md-card-content>
 

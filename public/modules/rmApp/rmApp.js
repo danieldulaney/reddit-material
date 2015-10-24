@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 
-var app = angular.module('App', ['ngMaterial']);
+var app = angular.module('rmApp', ['ngMaterial', 'rmPost']);
 
 app.config(function($mdIconProvider){
 	$mdIconProvider
@@ -19,6 +19,5 @@ app.filter('timesince', function(){
 		return moment().to(input*1000);
 	};
 });
-
 
 })();
