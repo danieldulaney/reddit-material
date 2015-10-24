@@ -17,3 +17,5 @@ bower install
 npm start
 ```
 By default, it will start on port 3000 in a development environment.
+
+Note that stacktraces may, under certain circumstances, be leaked to the user. Exercise caution before running this in a production environment.
