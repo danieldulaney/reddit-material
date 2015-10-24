@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 
-var app = angular.module('rmApp', ['ngMaterial', 'rmPost']);
+var app = angular.module('rmApp', ['ngMaterial', 'rmPost', 'rmData']);
 
 app.config(function($mdIconProvider){
 	$mdIconProvider
