@@ -1,7 +1,19 @@
-<div ng-if="data.kind === 'listing'">
+<pre>
+{{item.kind}}
+</pre>
 
+<div ng-if="item.kind === 'Listing'">
+	<rm-display ng-repeat="item in item.data.children" item="item"></rm-display>
 </div>
 
-<div ng-if="data.kind === 't3'">
+<div ng-if="item.kind === 't3'">
+	This is a post (title = {{item.data.title}})
+</div>
 
+<div ng-if="item.kind === 't1'">
+	This is a comment
+</div>
+
+<div ng-if="item.status === 'loading'">
+	Loading
 </div>

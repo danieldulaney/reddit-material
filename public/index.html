@@ -21,6 +21,7 @@
 		<script src="/modules/rmApp/rmApp.js"></script>
 		<script src="/modules/rmPost/rmPost.js"></script>
 		<script src="/modules/rmData/rmData.js"></script>
+		<script src="/modules/rmDisplay/rmDisplay.js"></script>
 	</head>
 
 	<body layout="column" ng-controller="AppCtrl">
@@ -38,7 +39,9 @@
 			</md-sidenav>
 			<div layout="column" flex id="content">
 				<md-content layout="column" flex class="md-padding" ng-controller="apiCtrl">
-				<pre>{{apiRes|json}}</pre>
+					<rm-display item="apiRes.data"></rm-display>
+					<md-divider></md-divider>
+					<pre>{{apiRes|json}}</pre>
 				</md-content>
 			</div>
 		</div>
