@@ -11,5 +11,7 @@
 </div>
 
 <div ng-if="item.kind === 't1'">
-	This is a comment
+	<rm-comment comment="item"></rm-comment>
+	<pre>{{item|json}}</pre>
+	<md-divider></md-divider>
 </div>

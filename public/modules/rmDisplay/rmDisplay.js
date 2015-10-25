@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 
-var rmDisplay = angular.module('rmDisplay', ['ngMaterial', 'rmPost', 'RecursionHelper']);
+var rmDisplay = angular.module('rmDisplay', ['ngMaterial', 'rmPost', 'rmComment', 'RecursionHelper']);
 
 rmDisplay.directive('rmDisplay', function(RecursionHelper){
 	return {
