@@ -1,19 +1,11 @@
-<pre>
-{{item.kind}}
-</pre>
-
 <div ng-if="item.kind === 'Listing'">
-	<rm-display ng-repeat="item in item.data.children" item="item"></rm-display>
+	<rm-display item="subitem" ng-repeat="subitem in item.data.children"></rm-display>
 </div>
 
 <div ng-if="item.kind === 't3'">
-	This is a post (title = {{item.data.title}})
+	<rm-post post="item"></rm-post>
 </div>
 
 <div ng-if="item.kind === 't1'">
 	This is a comment
-</div>
-
-<div ng-if="item.status === 'loading'">
-	Loading
 </div>

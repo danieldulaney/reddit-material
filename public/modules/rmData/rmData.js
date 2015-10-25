@@ -13,7 +13,7 @@ rmData.controller('apiCtrl', ['$scope', '$http', function($scope, $http){
 		$scope.apiRes = response;
 	}, function(response){
 		$scope.apiRes = response;
-	});
+	});/**/
 }]);
 
 })();

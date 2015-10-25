@@ -1,11 +1,36 @@
-<md-card>
-	<md-card-content>
-		<h1 class="card-header">{{post.data.title}}</h1>
-		<p class="byline">Created {{post.data.created_utc|timesince}} by /u/{{post.data.author}} in /r/{{post.data.subreddit}}</p>
-		<pre>{{post|json}}</pre>
+<md-card class="post">
+	<md-card-content class="rm-post-header">
+		<h2 class="md-title rm-post-title">{{post.data.title}}</h2>
+		<p class="md-subhead rm-post-byline">Created {{post.data.created_utc|timesince}} by /u/{{post.data.author}} in /r/{{post.data.subreddit}}</p>
 	</md-card-content>
 
-	<div class="md-actions" layout="row" layout-align="end center">
+	<md-divider></md-divider>
+	
+	<md-button class="rm-post-body md-cornered" href="{{post.data.url}}" aria-label="{{post.data.title}}">
+		<div class="rm-post-content-image" ng-if="postUrlType(post.data.domain) === 'image'"  style="background-image: url('{{post.data.preview.images[0].source.url}}')">
+		</div>
+
+		<div class="rm-post-content-self" ng-if="postUrlType(post.data.domain) === 'self'">
+		Self post
+		</div>
+
+		<div class="rm-post-content-default" ng-if="postUrlType(post.data.domain) === 'default'">	<!-- Default post -->
+			<img class="rm-thumbnail" ng-src="{{post.data.thumbnail}}">
+			<div>
+				<h3>{{post.data.domain}}</h3>
+				<span>{{post.data.url}}</span>
+			</div>
+		</div>
+	</md-button>
+
+	<md-divider></md-divider>
+
+
+	<div class="rm-post-actions">
+		<div class="rm-post-score">
+			<span class="smalltext">{{post.data.score}} points</span>
+			<span class="smalltext">{{post.data.num_comments}} comments</span>
+		</div>
 		<md-button class="md-icon-button">
 			<md-icon md-svg-icon="navigation:ic_expand_less_24px" aria-label="Upvote"></md-icon>
 		</md-button>
@@ -14,3 +39,7 @@
 		</md-button>
 	</div>
 </md-card>
+
+<pre>
+{{post.data|json}}
+</pre>
