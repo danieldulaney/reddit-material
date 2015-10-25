@@ -42,6 +42,10 @@
 			<div layout="column" flex id="content">
 				<md-content layout="column" flex class="md-padding" ng-controller="apiCtrl">
 					<rm-display item="apiRes.data"></rm-display>
+
+					<md-divider></md-divider>
+
+					<pre>{{apiRes|json}}</pre>
 				</md-content>
 			</div>
 		</div>

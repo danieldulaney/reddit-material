@@ -6,6 +6,7 @@ var favicon = require('serve-favicon');   // jshint ignore:line
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var app = express();
 
@@ -20,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/bower', express.static(path.join(__dirname, 'bower_components')));
+app.use('/r', function(req, res){
+	fs.createReadStream(path.join(__dirname, 'public', 'index.html')).pipe(res);
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler

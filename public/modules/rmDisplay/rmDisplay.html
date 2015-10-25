@@ -1,3 +1,7 @@
+<div ng-if="item[0]"> <!-- Too hacky? Array.isArray wasn't working, not sure why -->
+	<rm-display item="subitem" ng-repeat="subitem in item"></rm-display>
+</div>
+
 <div ng-if="item.kind === 'Listing'">
 	<rm-display item="subitem" ng-repeat="subitem in item.data.children"></rm-display>
 </div>
