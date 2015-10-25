@@ -1,4 +1,4 @@
-<md-card class="post">
+<md-card class="rm-post">
 	<md-card-content class="rm-post-header">
 		<h2 class="md-title rm-post-title">{{post.data.title}}</h2>
 		<p class="md-subhead rm-post-byline">Created {{post.data.created_utc|timesince}} by /u/{{post.data.author}} in /r/{{post.data.subreddit}}</p>
@@ -40,6 +40,8 @@
 	</div>
 </md-card>
 
+<!--
 <pre>
 {{post.data|json}}
 </pre>
+<!---->
