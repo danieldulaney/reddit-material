@@ -8,6 +8,7 @@ rmData.controller('apiCtrl', ['$scope', '$http', '$location', function($scope, $
 
 	console.log($location.url());
 
+	/*
 	// For some reason $location.url doesn't work
 	// Using a horrible regex hack instead
 	var re1='.*?';	// Non-greedy match on filler
@@ -19,10 +20,11 @@ rmData.controller('apiCtrl', ['$scope', '$http', '$location', function($scope, $
 	var m = p.exec($location.absUrl());
 
 	var apiCall = m[1];
+	*/
 
 	$http({
 		method: 'GET',
-		url: 'https://api.reddit.com' + apiCall,
+		url: 'https://api.reddit.com/r/science/comments/3qepdj/researchers_have_developed_a_new_strain_of_gm/',
 	}).then(function(response){
 		$scope.apiRes = response;
 	}, function(response){
