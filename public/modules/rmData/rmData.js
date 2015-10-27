@@ -6,6 +6,8 @@ var rmData = angular.module('rmData', ['ngResource']);
 rmData.controller('apiCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 	$scope.apiRes = {status: 'loading'};
 
+	console.log($location.url());
+
 	// For some reason $location.url doesn't work
 	// Using a horrible regex hack instead
 	var re1='.*?';	// Non-greedy match on filler
