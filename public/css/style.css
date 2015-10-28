@@ -42,10 +42,12 @@ Markdown Styling
 }
 
 /*
+Scrollbar Styling
+*/
+
+/*
 Comment Styling
 */
-.rm-comment {
-}
 
 .rm-comment-nonnest {
 	border-width: 0 0 0 5px;
@@ -60,12 +62,16 @@ Comment Styling
 	padding: 1em;
 }
 
-.rm-comment-nest {
-	padding: 0 0 0 5px;
+.rm-comment-nonnest > div > * {
+	margin: 0;
 }
 
-.rm-comment-nonnest > h3 {
-	margin-top: 0;
+.rm-comment-nonnest > div:last-child {
+	
+}
+
+.rm-comment-nest {
+	padding: 0 0 0 5px;
 }
 
 /*
