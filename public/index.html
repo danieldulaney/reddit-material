@@ -17,6 +17,7 @@
 
 		<!-- Local stylesheets -->
 		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/theme.css">
 
 		<!-- Local modules -->
 		<script src="/modules/rmApp/rmApp.js"></script>
@@ -28,7 +29,7 @@
 	</head>
 
 	<body layout="column" ng-controller="AppCtrl">
-		<md-toolbar layout="row">
+		<md-toolbar layout="row" class="md-primary">
 			<div class="md-toolbar-tools">
 				<md-button ng-click="toggleSidenav('left')" class="md-icon-button">
 					<md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
@@ -43,6 +44,7 @@
 			<div layout="column" flex id="content">
 				<md-content layout="column" flex ng-controller="apiCtrl">
 					<rm-display item="apiRes.data"></rm-display>
+					<div ng-if="apiRes.status === 'loading'">Spinner</div>
 				</md-content>
 			</div>
 		</div>

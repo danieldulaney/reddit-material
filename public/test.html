@@ -5,17 +5,22 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<script src="/bower/angular/angular.min.js"></script>
 	<script src="/bower/angular-sanitize/angular-sanitize.min.js"></script>
-	<script src="/modules/rmMarkdown/rmMarkdown.js"></script>
-	<script src="/bower/angular-marked/angular-marked.js"></script>
-	<script src="/bower/marked/marked.min.js"></script>
 	<script type="text/javascript">
 	'use strict';
-	var app = angular.module('testApp', ['hc.marked', 'ngSanitize']);
+	var app = angular.module('testApp', ['ngSanitize']);
 
 	app.controller('testCtrl', ['$scope', function($scope){
 		$scope.rawText = '[asdf](http://www.wikipedia.org)';
 	}]);
 	</script>
+	<style>
+	:root {
+		--bg-color: green;
+	};
+	body{
+		background-color: var(--bg-color);
+	}
+	</style>
 </head>
 <body>
 <div class="container">
@@ -23,25 +28,12 @@
 	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<textarea class="form-control" ng-model="rawText"></textarea>
 			</div>
 		</div>
 	</div>
 	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<div ng-bind-html="rawText"></div>
-				<hr>
-				<rm-markdown content="rawText"></rm-markdown>
-				<hr>
-				<marked>
-					# TEST
-					* item 1
-					* item 2
-					asdf|jkl|werw
-					-|-|-
-					asdf|sdf|qwer
-				</marked>
 			</div>
 		</div>
 	</div>

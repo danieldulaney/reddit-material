@@ -18,15 +18,17 @@
 				comment: '=',
 			},
 			controller: ['$scope', function($scope){
-
 				if(!$scope.comment.nest){
 					$scope.comment.nest = 0;
+					console.log('Comment by ' + $scope.comment.data.author + ' reset its own nest');
 				}
 
-				for (var i = $scope.comment.data.replies.length - 1; i >= 0; i--) {
-					$scope.comment.data.replies[i].nest += 1;
+				if($scope.comment.data.replies){
+					for (var i = $scope.comment.data.replies.data.children.length - 1; i >= 0; i--) {
+						$scope.comment.data.replies.data.children[i].nest = $scope.comment.nest + 1;
+						console.log('Comment by ' + $scope.comment.data.author + 'incremented comment by ' + $scope.comment.data.replies.data.children[i].data.author);
+					}
 				}
-
 
 
 				$scope.parse = function(input){

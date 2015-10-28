@@ -22,19 +22,15 @@ a:hover, a:active{
 	text-decoration: underline;
 }
 
-md-content {
-	background-color: #EEEEEE;
-}
-
 /*
 Markdown Styling
 */
 .md blockquote {
-	border-width: 0 0 0 5px;
+	border-width: 0 0 0 2px;
 	border-color: gray;
 	border-style: solid;
 	padding-left: .5em;
-	margin-left: 1em;
+	margin-left: .5em;
 }
 
 .md table {
@@ -49,15 +45,15 @@ Markdown Styling
 Comment Styling
 */
 .rm-comment {
-	background-color: white;
 }
 
 .rm-comment-nonnest {
-	border-width: 1px 0 1px 5px;
+	border-width: 1px 1px 1px 5px;
 	border-style: solid;
 	border-color: gray;
 	padding: 1em;
 	margin-bottom: -1px;	/* Prevent doubled top/bottom borders. Vaguely hacky */
+	background-color: white;
 }
 
 .rm-comment-nest {
