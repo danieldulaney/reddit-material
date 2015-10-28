@@ -24,7 +24,7 @@ rmData.controller('apiCtrl', ['$scope', '$http', '$location', function($scope, $
 
 	$http({
 		method: 'GET',
-		url: 'https://api.reddit.com/r/science/comments/3qepdj/researchers_have_developed_a_new_strain_of_gm/',
+		url: 'https://api.reddit.com/r/gifs/comments/3qhuer/i_can_show_you_the_world/',
 	}).then(function(response){
 		$scope.apiRes = response;
 	}, function(response){

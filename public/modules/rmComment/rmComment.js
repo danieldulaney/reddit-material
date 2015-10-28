@@ -3,6 +3,13 @@
 
 	var rmComment = angular.module('rmComment', ['ngMaterial', 'ngSanitize']);
 
+	// This increases the digest iterations from 10 to 20 before failure
+	// It's probably a bad idea
+	// More than 8 nested comments push the iterations above 10
+	rmComment.config(function($rootScopeProvider){
+		$rootScopeProvider.digestTtl(20);
+	});
+
 	rmComment.directive('rmComment', function(){
 		return {
 			restrict: 'E',
@@ -11,6 +18,17 @@
 				comment: '=',
 			},
 			controller: ['$scope', function($scope){
+
+				if(!$scope.comment.nest){
+					$scope.comment.nest = 0;
+				}
+
+				for (var i = $scope.comment.data.replies.length - 1; i >= 0; i--) {
+					$scope.comment.data.replies[i].nest += 1;
+				}
+
+
+
 				$scope.parse = function(input){
 					var escMap = {
 						'&lt;': '<',

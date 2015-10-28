@@ -1,3 +1,6 @@
+/*
+General Styling
+*/
 .md-cornered, .md-cornered > .md-ripple-container {
 	border-radius: 0;
 }
@@ -9,4 +12,129 @@
 
 *, *:active, *:focus {
 	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover, a:active{
+	text-decoration: underline;
+}
+
+md-content {
+	background-color: #EEEEEE;
+}
+
+/*
+Markdown Styling
+*/
+.md blockquote {
+	border-width: 0 0 0 5px;
+	border-color: gray;
+	border-style: solid;
+	padding-left: .5em;
+	margin-left: 1em;
+}
+
+.md table {
+	border: 1px solid gray;
+}
+
+.md > :last-child {
+	margin-bottom: 0;
+}
+
+/*
+Comment Styling
+*/
+.rm-comment {
+	background-color: white;
+}
+
+.rm-comment-nonnest {
+	border-width: 1px 0 1px 5px;
+	border-style: solid;
+	border-color: gray;
+	padding: 1em;
+	margin-bottom: -1px;	/* Prevent doubled top/bottom borders. Vaguely hacky */
+}
+
+.rm-comment-nest {
+	padding: 0 0 0 5px;
+}
+
+.rm-comment-nonnest > h3 {
+	margin-top: 0;
+}
+
+/*
+Post Styling
+*/
+.rm-post {
+	min-width: 400px;
+}
+
+.rm-post-header > p {
+	margin: 0;
+}
+
+.rm-post-header > h2 {
+	margin: 0 0 .5em 0;
+}
+
+.rm-post-body {
+	margin: 0;
+	padding: 0;
+	line-height: inherit;
+	text-transform: none;
+	text-align: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+.rm-post-content-image {
+	height: 200px;
+	background-size: 100%;
+	background-position: center center;
+}
+
+.rm-post-content-default {
+	padding: 1em;
+	display: flex;
+}
+
+.rm-post-content-default > div {
+	padding: 0 1em;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.rm-post-content-default h3 {
+	margin: 0;
+	padding: 0 0 .5em 0;
+}
+
+.rm-thumbnail {
+	width: auto;
+	height: auto;
+}
+
+.rm-post-actions{
+	margin: 0;
+	display: flex;
+}
+
+.rm-post-score {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: .5em;
+}
+
+.rm-post-score > span {
+	display: block;
 }

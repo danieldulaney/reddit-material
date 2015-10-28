@@ -1,5 +1,11 @@
 <div class="rm-comment">
-	<h3>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.score}} Points&nbsp;&bull; {{comment.data.created_utc|timesince}}</h3>
-	<div ng-bind-html="parse(comment.data.body_html)"></div>
+	<div class="rm-comment-nonnest">
+		<h3>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.score}} Points&nbsp;&bull; {{comment.data.created_utc|timesince}}</h3>
+		<div ng-bind-html="parse(comment.data.body_html)" class="rm-comment-body rm-markdown"></div>
+		<div>{{comment.nest}}</div>
+	</div>
+
+	<div class="rm-comment-nest">
+		<rm-display item="comment.data.replies"></rm-display>
+	</div>
 </div>
-<md-divider></md-divider>

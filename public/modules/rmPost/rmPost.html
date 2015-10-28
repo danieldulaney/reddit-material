@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="rm-post-content-self" ng-if="postUrlType(post.data.domain) === 'self'">
-		Self post
+		<pre>{{post|json}}</pre>
 		</div>
 
 		<div class="rm-post-content-default" ng-if="postUrlType(post.data.domain) === 'default'">	<!-- Default post -->
