@@ -18,7 +18,7 @@ Palette created at http://mcg.mbitson.com/#/ using 500 = #336699
   'A700': '#24476b'
 }
 
-Accent colors
+reddit accent
 https://color.adobe.com/create/color-wheel/?base=2&rule=Analogous&selected=2&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.65,0,0.10231371040613339,0.34193876186162125,0.03450000000000003,0.69,0,0.30196078431372547,0.6,0.03450000000000003,0.69,0.3663521172693837,0.4295722854189928,0.65,0.03250000000000003&swatchOrder=0,1,2,3,4
 Generated using an analagous rule, with the center swatch a fully saturated version of reddit 500
 {
@@ -28,32 +28,43 @@ Generated using an analagous rule, with the center swatch a fully saturated vers
 	'4': '#09B05D',
 	'5': '#6EA608'
 }
+
+reddit grays
+Generated from reddit colors by dropping saturation to 20-ish (100 scale)
+{
+	'50': '#EDF1F5',
+	'500': '#7A8A99',
+}
 */
 
 md-content {
-	background-color: #e0ebf5; /* reddit 50 */
+	background-color: #EDF1F5; /* reddit gray 50 */
 }
 
 md-toolbar:not(.md-menu-toolbar) {
 	background-color: #336699; /* reddit 500 */
 }
 
-.md-comment .md-accent-1 {
-	border-color: #A6001A;
+.rm-comment .rm-accent-1 {
+	border-color: #A6001A;	/* reddit accent 1 */ 
 }
 
-.md-comment .md-accent-2 {
-	border-color: #5709B0;
+.rm-comment .rm-accent-2 {
+	border-color: #5709B0;	/* reddit accent 2 */
 }
 
-.md-comment .md-accent-2 {
-	border-color: #004D99;
+.rm-comment .rm-accent-3 {
+	border-color: #004D99;	/* reddit accent 3 */
 }
 
-.md-comment .md-accent-2 {
-	border-color: #09B05D;
+.rm-comment .rm-accent-4 {
+	border-color: #09B05D;	/* reddit accent 4 */
 }
 
-.md-comment .md-accent-2 {
-	border-color: #6EA608;
+.rm-comment .rm-accent-5 {
+	border-color: #6EA608;	/* reddit accent 5 */
+}
+
+.rm-comment-nonnest > div {
+	border-color: #748A99;	/* reddit gray 500 */
 }

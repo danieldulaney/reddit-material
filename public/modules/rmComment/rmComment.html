@@ -1,8 +1,10 @@
 <div class="rm-comment">
-	<div class="rm-comment-nonnest" ng-click="incChild()">
+	<div class="rm-comment-nonnest" ng-class="'rm-accent-' + (comment.nest%5 + 1)" ng-click="incChild()">
+	<div>
 		<h3>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.score}} Points&nbsp;&bull; {{comment.data.created_utc|timesince}}</h3>
 		<div ng-bind-html="parse(comment.data.body_html)" class="rm-comment-body rm-markdown"></div>
-		<div>{{comment.nest%6}}</div>
+		<div>{{comment.nest%5 + 1}}</div>
+	</div>
 	</div>
 
 	<div class="rm-comment-nest">

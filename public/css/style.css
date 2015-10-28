@@ -48,12 +48,16 @@ Comment Styling
 }
 
 .rm-comment-nonnest {
-	border-width: 1px 1px 1px 5px;
+	border-width: 0 0 0 5px;
 	border-style: solid;
-	border-color: gray;
-	padding: 1em;
 	margin-bottom: -1px;	/* Prevent doubled top/bottom borders. Vaguely hacky */
 	background-color: white;
+}
+
+.rm-comment-nonnest > div {
+	border-width: 1px 1px 1px 0;
+	border-style: solid;
+	padding: 1em;
 }
 
 .rm-comment-nest {
