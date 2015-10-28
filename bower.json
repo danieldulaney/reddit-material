@@ -22,6 +22,5 @@
     "angular-material": "~0.11.4",
     "moment": "~2.10.6",
     "angular-sanitize": "~1.4.7",
-    "angular-markdown-directive": "~0.3.1"
   }
 }

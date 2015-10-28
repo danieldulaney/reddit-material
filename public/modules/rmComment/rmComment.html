@@ -1,6 +1,5 @@
 <div class="rm-comment">
-<h3>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.score}} Points&nbsp;&bull; {{comment.data.created_utc|timesince}}</h3>
-<btf-markdown>{{comment.data.body}}</btf-markdown>
+	<h3>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.score}} Points&nbsp;&bull; {{comment.data.created_utc|timesince}}</h3>
+	<div ng-bind-html="parse(comment.data.body_html)"></div>
 </div>
-<pre>{{comment|json}}</pre>
 <md-divider></md-divider>

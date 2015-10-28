@@ -6,27 +6,42 @@
 	<script src="/bower/angular/angular.min.js"></script>
 	<script src="/bower/angular-sanitize/angular-sanitize.min.js"></script>
 	<script src="/modules/rmMarkdown/rmMarkdown.js"></script>
+	<script src="/bower/angular-marked/angular-marked.js"></script>
+	<script src="/bower/marked/marked.min.js"></script>
 	<script type="text/javascript">
 	'use strict';
-	var app = angular.module('testApp', ['rmMarkdown', 'ngSanitize']);
+	var app = angular.module('testApp', ['hc.marked', 'ngSanitize']);
 
 	app.controller('testCtrl', ['$scope', function($scope){
-		$scope.rawText = 'someText';
+		$scope.rawText = '[asdf](http://www.wikipedia.org)';
 	}]);
 	</script>
 </head>
 <body>
 <div class="container">
 <div class="row">
-	<div class="col-md-6">
-		<textarea class="form-control" ng-model="rawText"></textarea>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<textarea class="form-control" ng-model="rawText"></textarea>
+			</div>
+		</div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-4">
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div ng-bind-html="rawText"></div>
 				<hr>
 				<rm-markdown content="rawText"></rm-markdown>
+				<hr>
+				<marked>
+					# TEST
+					* item 1
+					* item 2
+					asdf|jkl|werw
+					-|-|-
+					asdf|sdf|qwer
+				</marked>
 			</div>
 		</div>
 	</div>
