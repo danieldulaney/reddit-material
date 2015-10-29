@@ -42,13 +42,8 @@ Markdown Styling
 }
 
 /*
-Scrollbar Styling
-*/
-
-/*
 Comment Styling
 */
-
 .rm-comment-nonnest {
 	border-width: 0 0 0 5px;
 	border-style: solid;
@@ -59,20 +54,37 @@ Comment Styling
 .rm-comment-nonnest > div {
 	border-width: 1px 1px 1px 0;
 	border-style: solid;
-	padding: 1em;
 }
 
-.rm-comment-nonnest > div > * {
+.rm-comment-body {
+	padding: 1em 1em 0 1em;
+}
+
+.rm-comment-nonnest > div * {
 	margin: 0;
-}
-
-.rm-comment-nonnest > div:last-child {
-	
 }
 
 .rm-comment-nest {
 	padding: 0 0 0 5px;
 }
+
+.rm-comment-actions{
+	margin: 0;
+	display: flex;
+}
+
+.rm-comment-score {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1em;
+}
+
+.rm-comment-score > span {
+	display: block;
+}
+
 
 /*
 Post Styling

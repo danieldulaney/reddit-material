@@ -45,6 +45,7 @@
 				<md-content layout="column" flex ng-controller="apiCtrl">
 					<rm-display item="apiRes.data"></rm-display>
 					<div ng-if="apiRes.status === 'loading'">Spinner</div>
+					<pre>{{apiRes|json}}</pre>
 				</md-content>
 			</div>
 		</div>

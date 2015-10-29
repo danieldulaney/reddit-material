@@ -1,10 +1,37 @@
 <div class="rm-comment">
 	<div class="rm-comment-nonnest" ng-class="'rm-accent-' + (comment.nest%5 + 1)" ng-click="incChild()">
-	<div>
-		<h4>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.created_utc|timesince}}</h4>
-		<div ng-bind-html="parse(comment.data.body_html)" class="rm-comment-body rm-markdown"></div>
-		<div class="smalltext">{{comment.data.score}} Points</div>
-	</div>
+		<div>
+			<div class="rm-comment-body">
+				<h4>/u/{{comment.data.author}}&nbsp;&bull; {{comment.data.created_utc|timesince}}<span class="rm-gold" ng-if="comment.data.gilded">&bull;{{comment.data.gilded}}</span></h4>
+				<div ng-bind-html="parse(comment.data.body_html)" class="rm-comment-body rm-markdown"></div>
+			</div>
+
+			<div class="rm-comment-actions">
+				<div class="rm-comment-score">
+					<span class="smalltext">{{comment.data.score}} Points</span>
+				</div>
+
+				<md-button class="md-icon-button" aria-label="Save">
+					<md-icon md-svg-icon="action:ic_grade_24px"></md-icon>
+					<md-tooltip>Save</md-tooltip>
+				</md-button>
+
+				<md-button class="md-icon-button" aria-label="Reply">
+					<md-icon md-svg-icon="content:ic_reply_24px"></md-icon>
+					<md-tooltip>Reply</md-tooltip>
+				</md-button>
+
+				<md-button class="md-icon-button" aria-label="Upvote">
+					<md-icon md-svg-icon="reddit:upvote"></md-icon>
+					<md-tooltip>Upvote</md-tooltip>
+				</md-button>
+
+				<md-button class="md-icon-button" aria-label="Downvote">
+					<md-icon md-svg-icon="reddit:downvote"></md-icon>
+					<md-tooltip>Downvote</md-tooltip>
+				</md-button>
+			</div>
+		</div>
 	</div>
 
 	<div class="rm-comment-nest">
