@@ -68,3 +68,23 @@ md-toolbar:not(.md-menu-toolbar) {
 .rm-comment-nonnest > div {
 	border-color: #748A99;	/* reddit gray 500 */
 }
+
+.rm-accent-1 {
+	background-color: #A6001A;	/* reddit accent 1 */ 
+}
+
+.rm-accent-2 {
+	background-color: #5709B0;	/* reddit accent 2 */
+}
+
+.rm-accent-3 {
+	background-color: #004D99;	/* reddit accent 3 */
+}
+
+.rm-accent-4 {
+	background-color: #09B05D;	/* reddit accent 4 */
+}
+
+.rm-accent-5 {
+	background-color: #6EA608;	/* reddit accent 5 */
+}

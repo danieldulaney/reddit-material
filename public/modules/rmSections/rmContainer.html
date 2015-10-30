@@ -1,0 +1,41 @@
+<style>
+rm-container > ng-transclude{
+	display: flex;
+	height: 100%;
+}
+
+rm-section{
+	flex-grow: 1;
+	max-height: 100%;
+}
+
+/* Always hide all but last 2 sections */
+rm-section:not(:nth-last-child(-n+2)){
+	display: none;
+}
+
+/* On small(ish) devices, hide the second-last child */
+@media (max-width: 1199px){
+	rm-section:nth-last-child(2){
+		display: none;
+	}
+	rm-section:last-child{
+		width: 100%;
+	}
+}
+
+/* On not small(ish) devices, make the width 50% */
+@media (min-width: 1200px){
+	rm-section{
+		width: 50%;
+	}
+}
+
+/* Hide the back arrow on the first section */
+rm-section:first-child .rm-close-section{
+	display: none;
+}
+</style>
+
+
+<ng-transclude></ng-transclude>
